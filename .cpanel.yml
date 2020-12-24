@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/kosituto/public_html/api/sms_api/
+    - /bin/cp -R * $DEPLOYPATH
