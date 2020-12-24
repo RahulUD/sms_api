@@ -41,4 +41,20 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    public function userable()
+    {
+        return $this->morphTo();
+    }
+    public function contacts()
+    {
+        return $this->morphMany(Contact::class, 'contactable');
+    }
+    public function addresses()
+    {
+        return $this->morphMany(Address::class, 'addressable');
+    }
+    public function gender()
+    {
+        return $this->belongsTo(Gender::class);
+    }
 }

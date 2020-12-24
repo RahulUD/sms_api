@@ -24,8 +24,8 @@ class UserController extends Controller
     }
     public function user()
     {
-        $user = Auth::User();
-        return $this->jsonResponse('Success', ['user' =>$user]);
+        $user = User::find(Auth::User()->id);
+        return $this->jsonResponse('Success', ['user' => $user]);
     }
     public function logout()
     {
